@@ -1,0 +1,12 @@
+{
+  "id": "builtin.language-basics-less",
+  "name": "Language Basics Less",
+  "description": "Provides syntax highlighting and bracket matching in Less files.",
+  "languages": [
+    {
+      "id": "less",
+      "extensions": [".less"],
+      "tokenize": "src/tokenizeLess.js"
+    }
+  ]
+}

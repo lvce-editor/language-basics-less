@@ -125,6 +125,8 @@ const RE_STRING_SINGLE_QUOTE_CONTENT = /^[^']+/
 const RE_SINGLE_QUOTE = /^'/
 const RE_ANYTHING_BUT_CURLY = /^[^\{\}]+/s
 const RE_LINE_COMMENT = /\/\/.*/
+const RE_NESTED_SELECTOR = /^[\w\.\-\s]+(?=\s*(?:\{|,))/
+const RE_AMPERSAND = /^\&/
 
 /**
  * @param {string} line
@@ -205,9 +207,13 @@ export const tokenizeLine = (line, lineState) => {
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.AfterSelector
+        } else if ((next = part.match(RE_AMPERSAND))) {
+          token = TokenType.Punctuation
+          state = State.AfterSelector
         } else if ((next = part.match(RE_CURLY_OPEN))) {
           token = TokenType.CurlyOpen
           state = State.InsideSelector
+          stack.push(State.InsideSelector)
         } else if ((next = part.match(RE_SELECTOR_CLASS))) {
           token = TokenType.CssSelectorClass
           state = State.AfterSelector
@@ -297,6 +303,16 @@ export const tokenizeLine = (line, lineState) => {
         if ((next = part.match(RE_WHITESPACE))) {
           token = TokenType.Whitespace
           state = State.InsideSelector
+        } else if ((next = part.match(RE_AMPERSAND))) {
+          token = TokenType.Punctuation
+          state = State.InsideSelector
+        } else if ((next = part.match(RE_NESTED_SELECTOR))) {
+          if (next[0].startsWith('.')) {
+            token = TokenType.CssSelectorClass
+          } else {
+            token = TokenType.CssSelector
+          }
+          state = State.AfterSelector
         } else if ((next = part.match(RE_PROPERTY_NAME))) {
           token = TokenType.CssPropertyName
           state = State.AfterPropertyName
@@ -318,7 +334,7 @@ export const tokenizeLine = (line, lineState) => {
           state = State.InsideSelector
         } else if ((next = part.match(RE_CURLY_CLOSE))) {
           token = TokenType.CurlyClose
-          state = State.TopLevelContent
+          state = stack.pop() || State.TopLevelContent
         } else {
           throw new Error('no')
         }

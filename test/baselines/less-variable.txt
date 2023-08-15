@@ -1,0 +1,6 @@
+VariableName
+Punctuation
+Whitespace
+Numeric
+CssPropertyValue
+Punctuation

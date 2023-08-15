@@ -75,6 +75,7 @@ export const State = {
   InsideSingleQuoteString: 16,
   AfterFunctionNameInsideArguments: 17,
   AfterKeywordImport: 18,
+  AfterLessVariableName: 19,
 }
 
 export const initialLineState = {
@@ -127,6 +128,7 @@ const RE_ANYTHING_BUT_CURLY = /^[^\{\}]+/s
 const RE_LINE_COMMENT = /\/\/.*/
 const RE_NESTED_SELECTOR = /^[\w\.\-\s]+(?=\s*(?:\{|,))/
 const RE_AMPERSAND = /^\&/
+const RE_LESS_VARIABLE_NAME = /^@[\w\-]+(?=\:)/
 
 /**
  * @param {string} line
@@ -167,6 +169,9 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_SQUARE_OPEN))) {
           token = TokenType.Punctuation
           state = State.InsideAttributeSelector
+        } else if ((next = part.match(RE_LESS_VARIABLE_NAME))) {
+          token = TokenType.Variable
+          state = State.AfterLessVariableName
         } else if ((next = part.match(RE_QUERY))) {
           switch (next[0]) {
             case '@font-face':
@@ -561,6 +566,26 @@ export const tokenizeLine = (line, lineState) => {
         } else if ((next = part.match(RE_STRING_SINGLE_QUOTE_CONTENT))) {
           token = TokenType.String
           state = State.InsideSingleQuoteString
+        } else {
+          throw new Error('no')
+        }
+        break
+      case State.AfterLessVariableName:
+        if ((next = part.match(RE_COLON))) {
+          token = TokenType.Punctuation
+          state = State.AfterLessVariableName
+        } else if ((next = part.match(RE_WHITESPACE))) {
+          token = TokenType.Whitespace
+          state = State.AfterLessVariableName
+        } else if ((next = part.match(RE_NUMERIC))) {
+          token = TokenType.Numeric
+          state = State.AfterLessVariableName
+        } else if ((next = part.match(RE_SEMICOLON))) {
+          token = TokenType.Punctuation
+          state = stack.pop() || State.TopLevelContent
+        } else if ((next = part.match(RE_PROPERTY_VALUE))) {
+          token = TokenType.CssPropertyValue
+          state = State.AfterLessVariableName
         } else {
           throw new Error('no')
         }

@@ -4,7 +4,15 @@ Whitespace
 Punctuation
 NewLine
 Whitespace
-Unknown
+CssSelectorClass
+CssSelectorClass
+CssSelectorClass
+Whitespace
+CssSelector
+Whitespace
+CssSelectorClass
+Whitespace
+Punctuation
 NewLine
 Whitespace
 CssPropertyName

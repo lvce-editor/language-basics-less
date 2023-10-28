@@ -180,7 +180,16 @@ Punctuation
 NewLine
 Punctuation
 NewLine
-Unknown
+CssSelectorClass
+CssSelector
+Punctuation
+CssSelector
+Punctuation
+Whitespace
+CssSelectorClass
+CssSelectorClass
+Whitespace
+Punctuation
 NewLine
 Whitespace
 CssPropertyName

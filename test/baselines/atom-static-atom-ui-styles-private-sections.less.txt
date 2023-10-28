@@ -88,7 +88,10 @@ Punctuation
 NewLine
 NewLine
 Whitespace
-Unknown
+CssSelectorClass
+CssSelector
+Whitespace
+Punctuation
 NewLine
 Whitespace
 CssPropertyName

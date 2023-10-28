@@ -306,7 +306,10 @@ CssSelectorClass
 Punctuation
 NewLine
 Whitespace
+CssSelectorClass
+Punctuation
+Punctuation
 Unknown
 NewLine
-Punctuation
+Unknown
 NewLine

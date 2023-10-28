@@ -85,7 +85,8 @@
       "atom-static-variables-octicon-utf-codes.less",
       "atom-static-variables-syntax-variables.less",
       "atom-static-variables-ui-variables.less",
-      "css-and-line-comment"
+      "css-and-line-comment",
+      "x-terminal.less"
     ]
   }
 }

@@ -333,7 +333,10 @@ Unknown
 NewLine
 Whitespace
 Punctuation
-Unknown
+CssSelectorClass
+CssSelector
+Whitespace
+Punctuation
 NewLine
 Whitespace
 CssPropertyName

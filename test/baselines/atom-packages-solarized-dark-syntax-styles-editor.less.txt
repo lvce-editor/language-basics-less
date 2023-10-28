@@ -138,10 +138,16 @@ Punctuation
 NewLine
 NewLine
 Whitespace
-Unknown
+CssSelectorClass
+CssSelector
+Punctuation
 NewLine
 Whitespace
 CssSelectorClass
+Whitespace
+CssSelectorClass
+CssSelectorClass
+Whitespace
 Punctuation
 NewLine
 Whitespace

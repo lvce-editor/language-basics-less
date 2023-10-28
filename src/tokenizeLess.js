@@ -318,6 +318,9 @@ export const tokenizeLine = (line, lineState) => {
             token = TokenType.CssSelector
           }
           state = State.AfterSelector
+        } else if ((next = part.match(RE_SELECTOR_CLASS))) {
+          token = TokenType.CssSelectorClass
+          state = State.AfterSelector
         } else if ((next = part.match(RE_PROPERTY_NAME))) {
           token = TokenType.CssPropertyName
           state = State.AfterPropertyName

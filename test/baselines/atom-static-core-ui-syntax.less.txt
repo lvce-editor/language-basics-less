@@ -82,6 +82,12 @@ NewLine
 Punctuation
 NewLine
 NewLine
+CssSelectorClass
+Punctuation
+Punctuation
+Whitespace
+Punctuation
+Whitespace
 Unknown
 Punctuation
 NewLine

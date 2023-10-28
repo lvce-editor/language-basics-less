@@ -9,10 +9,13 @@ Whitespace
 Punctuation
 NewLine
 Whitespace
+CssSelectorClass
 Unknown
 Punctuation
+CssPropertyName
+Punctuation
 Whitespace
-Unknown
+Punctuation
 NewLine
 Whitespace
 CssPropertyName

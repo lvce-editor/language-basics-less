@@ -65,9 +65,12 @@ CssSelectorClass
 Punctuation
 NewLine
 Whitespace
+CssSelectorClass
+Punctuation
+Punctuation
 Unknown
 NewLine
-Punctuation
+Unknown
 NewLine
 NewLine
 NewLine
@@ -79,6 +82,7 @@ Comment
 NewLine
 NewLine
 CssSelectorClass
+Whitespace
 Punctuation
 NewLine
 Whitespace

@@ -127,7 +127,10 @@ Comment
 NewLine
 Whitespace
 Punctuation
-Unknown
+CssSelectorClass
+CssSelector
+Whitespace
+Punctuation
 NewLine
 Whitespace
 CssPropertyName
@@ -297,7 +300,6 @@ NewLine
 Comment
 NewLine
 CssSelectorClass
-Whitespace
 Punctuation
 NewLine
 Whitespace
@@ -998,7 +1000,13 @@ NewLine
 NewLine
 Comment
 NewLine
-Unknown
+CssSelectorClass
+CssSelector
+Punctuation
+CssSelector
+Punctuation
+Whitespace
+Punctuation
 NewLine
 NewLine
 Whitespace

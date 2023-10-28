@@ -71,10 +71,13 @@ Punctuation
 Unknown
 NewLine
 Whitespace
+CssSelectorClass
+Punctuation
+Punctuation
 Unknown
 NewLine
 Whitespace
-Punctuation
+Unknown
 NewLine
 Punctuation
 NewLine

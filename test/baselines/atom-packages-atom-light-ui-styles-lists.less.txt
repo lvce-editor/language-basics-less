@@ -1,6 +1,11 @@
+KeywordImport
+Whitespace
+Punctuation
+String
+Punctuation
+Punctuation
+Whitespace
 Comment
-CssSelector
-Unknown
 NewLine
 NewLine
 CssSelectorClass

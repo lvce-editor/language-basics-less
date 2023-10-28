@@ -28,7 +28,13 @@ Punctuation
 Punctuation
 NewLine
 NewLine
-Comment
+VariableName
+Punctuation
+Whitespace
+CssPropertyValue
+Punctuation
+CssSelector
+Punctuation
 CssSelector
 Unknown
 NewLine

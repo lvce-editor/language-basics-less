@@ -125,7 +125,7 @@ const RE_STRING_DOUBLE_QUOTE_CONTENT = /^[^"]+/
 const RE_STRING_SINGLE_QUOTE_CONTENT = /^[^']+/
 const RE_SINGLE_QUOTE = /^'/
 const RE_ANYTHING_BUT_CURLY = /^[^\{\}]+/s
-const RE_LINE_COMMENT = /\/\/.*/
+const RE_LINE_COMMENT = /^\/\/.*/
 const RE_NESTED_SELECTOR = /^[\w\.\-\s]+(?=\s*(?:\{|,))/
 const RE_AMPERSAND = /^\&/
 const RE_LESS_VARIABLE_NAME = /^@[\w\-]+(?=\:)/

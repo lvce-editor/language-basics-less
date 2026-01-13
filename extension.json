@@ -5,8 +5,11 @@
   "languages": [
     {
       "id": "less",
-      "extensions": [".less"],
+      "extensions": [
+        ".less"
+      ],
       "tokenize": "src/tokenizeLess.js"
     }
-  ]
+  ],
+  "repository": "https://github.com/lvce-editor/language-basics-less"
 }

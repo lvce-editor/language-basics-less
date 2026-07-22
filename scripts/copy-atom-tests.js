@@ -16,8 +16,6 @@ const getTestName = (line) => {
   )
 }
 
-
-
 const getAllTests = async (folder) => {
   const dirents = await readdir(folder, { recursive: true })
   const allTests = []
@@ -29,7 +27,7 @@ const getAllTests = async (folder) => {
     const fileContent = await readFile(filePath, 'utf8')
     allTests.push({
       testName: getTestName(dirent),
-      testContent: fileContent
+      testContent: fileContent,
     })
   }
   return allTests
@@ -37,7 +35,10 @@ const getAllTests = async (folder) => {
 
 const writeTestFiles = async (allTests) => {
   for (const test of allTests) {
-    await writeFile(`${root}/test/cases/${test.testName}.less`, test.testContent)
+    await writeFile(
+      `${root}/test/cases/${test.testName}.less`,
+      test.testContent,
+    )
   }
 }
 

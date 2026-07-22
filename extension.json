@@ -5,9 +5,7 @@
   "languages": [
     {
       "id": "less",
-      "extensions": [
-        ".less"
-      ],
+      "extensions": [".less"],
       "tokenize": "src/tokenizeLess.js"
     }
   ],
